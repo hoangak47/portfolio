@@ -1,0 +1,163 @@
+@keyframes spin {
+    0% {
+        height: 0;
+        width: 0;
+    }
+
+    10% {
+        height: 80vw;
+        width: 2px;
+    }
+
+    30% {
+        transform: rotate(90deg);
+    }
+
+    60% {
+        height: 0;
+        width: 0;
+        transform: rotate(90deg);
+    }
+
+    100% {
+        height: 80vw;
+        width: 2px;
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes spin2 {
+    0% {
+        height: 0;
+        width: 0;
+    }
+
+    10% {
+        height: 80vh;
+        width: 2px;
+    }
+
+    30% {
+        transform: rotate(90deg);
+    }
+
+    60% {
+        height: 0;
+        width: 0;
+        transform: rotate(90deg);
+    }
+
+    100% {
+        height: 80vh;
+        width: 2px;
+        transform: rotate(90deg);
+    }
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --black-color: #000;
+    --color-btn-toggle: #fff;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.dark{
+    background-image: url(./accesst/background.webp);
+    transition: all 0.5s ease-in-out;
+}
+
+.light{
+    background-image: url(./accesst/background2.webp);
+    transition: all 0.5s ease-in-out;
+}
+
+.spin {
+    background-color: #fff;
+    animation: spin 5s ease-in-out;
+    transform: translateZ(0);
+    z-index: 1000;
+}
+
+.spin2 {
+    background-color: #fff;
+    animation: spin2 5s ease-in-out;
+    transform: translateZ(0);
+    z-index: 100001;
+}
+
+@keyframes left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes right {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.curtains-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50vw;
+    background-color: black;
+    animation: left 2s ease-out forwards;
+    animation-delay: 3s;
+    z-index: 10000;
+}
+
+.curtains-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50vw;
+    background-color: black;
+    animation: right 2s ease-out forwards;
+    animation-delay: 3s;
+    z-index: 10000;
+}
+
+.btn-toggle{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: 1px solid var(--color-btn-toggle);
+    border-radius: 50%;
+}
+
+.btn-toggle svg{
+    width: 100%;
+    height: 100%;
+    fill: aliceblue;
+}
